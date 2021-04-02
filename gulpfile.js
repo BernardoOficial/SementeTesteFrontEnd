@@ -1,4 +1,4 @@
-var     gulp = require('gulp'),
+const   gulp = require('gulp'),
         sass = require('gulp-sass'),
         sassLint = require('gulp-sass-lint'),
         sourcemaps = require('gulp-sourcemaps'),
@@ -30,7 +30,8 @@ function style() {
     // 1. where is myscss files
     return gulp.src([
         // setup
-        './src/styles/**/*.scss',
+        // './src/styles/**/*.scss',
+        './src/styles/styles.scss',
     ])
     // 2. sass linting
         .pipe(sassLint({
