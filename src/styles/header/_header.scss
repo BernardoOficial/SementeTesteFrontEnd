@@ -1,0 +1,40 @@
+.#{$header} {
+    border-bottom: 1px solid $green-primary;
+    @include container;
+    .#{$header}__wrapper {
+        @include wrapper;
+        @include flex($justifyContent: space-between);
+    }
+    .#{$header}__logo {
+        @include logoJornalSemente;
+    }
+    .#{$header}__list {
+        @include flex($justifyContent: space-between);
+        @media (max-width: $break-point-tablet-portrait) {
+            display: none;
+        }
+        .#{$header}__item {
+            @include menuItem;
+            .#{$header}__link {
+                @include menuLink;
+            }
+        }
+    }
+    .#{$header}__icon-toggle {
+        @include menuToggle;
+    }
+    .#{$header}__overlay {
+        @include overlay;
+
+        .#{$header}__menu-mobile {
+            @include flex($flexDirection: column);
+            @include menuMobile;
+            .#{$header}__item {
+                @include menuItem($margin-itens: 0, $color: $white-primary, $isDecoration: false);
+                .#{$header}__link {
+                    @include menuLink($color: $white-primary);
+                }
+            }
+        }
+    }
+}

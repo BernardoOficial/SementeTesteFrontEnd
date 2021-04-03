@@ -1,0 +1,29 @@
+// Variables - COLOR
+$white-primary: #ffffff;
+
+$black-primary: #303030;
+$black-secondary: #373737;
+$black-third: #707070;
+$black-fourth: #7E7E7E;
+
+$green-primary: #9CB803;
+$green-secondary: #B0CE09;
+$green-third: #9CB8034D;
+
+// MEDIA QUERIES
+
+// Break Point
+$break-point-desktop-big: 1800px;
+$break-point-desktop: 1800px;
+$break-point-tablet-landscape: 1200px;
+$break-point-tablet-portrait: 900px;
+$break-point-mobile: 600px;
+
+// Width Max
+$width-header-footer-max: 1000px;
+$width-content-max: 680px;
+
+// CLASS NAME - Caso precise alterar o nome das classe
+$header: header;
+$main: main;
+$footer: footer;

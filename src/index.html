@@ -1,10 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <title>Teste</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/styles.css" />
+    <title>Jornal Semente</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEARCH ENGINES -->
+    <meta name="author" content="Jornal Semente">
+    <meta name="description" content="Jornal Semente é um portal com diversos assuntos, dentre eles estão: certificados, certificação, diploma, carreira, profissionalizar, profissionalizante, crescimento profissional, desenvolvimento humano.">
+
+    <!-- INFORMATION WHEN SHARING THE LINK -->
+    <meta property="og:image" content="images/jornal-semente.png">
+    <meta property="og:description" content="Jornal Semente é um portal com diversos assuntos, dentre eles estão: certificados, certificação, diploma, carreira, profissionalizar, profissionalizante, crescimento profissional, desenvolvimento humano.">
+    <meta property="og:title" content="Jornal Semente">
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="./images/jornal-semente.ico" type="image/x-icon">
+
+    <!-- GOOGLE FONTS -->
+    <!-- Poppins - Regular - Medium - Bold - Italic -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <!-- Poppins - Regular - Bold - Italic -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/styles.css" />
+
 </head>
     <body>
-        <h1>Hello, World!</h1>
+        
+        <header class="header">
+
+            <nav class="header__wrapper">
+                <figure class="header__figure">
+                    <a href="#" class="header__link" title="Jornal Semente" translate="no">
+                        <img class="header__logo" src="./images/jornal-semente.png" alt="Jornal Semente" title="Jornal Semente" translate="no">
+                    </a>
+                </figure>
+
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a class="header__link" href="#" title="Artigos">Artigos</a>
+                    </li>
+                    <li class="header__item">
+                        <a class="header__link" href="#" title="Sobre o Portal">Sobre o Portal</a>
+                    </li>
+                    <li class="header__item">
+                        <a class="header__link" href="#" title="Contato">Contato</a>
+                    </li>
+                </ul>
+                
+                <button class="header__icon-toggle" data-icon title="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <section class="header__overlay" data-overlay>
+                    <ul class="header__menu-mobile" data-menu-mobile>
+                        <li class="header__item">
+                            <a class="header__link" href="#" title="Artigos">Artigos</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__link" href="#" title="Sobre o Portal">Sobre o Portal</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__link" href="#" title="Contato">Contato</a>
+                        </li>
+                    </ul>
+                </section>
+
+            </nav>
+
+        </header>
+
+        <main>
+
+        </main>
+
+        <footer class="footer">
+
+            <nav class="footer__wrapper">
+    
+                <section class="footer__container-left">
+                    
+                    <figure class="footer__figure">
+                        <a href="#" class="footer__link" title="Jornal Semente" translate="no">
+                            <img class="footer__logo" src="./images/jornal-semente-pb.png" alt="Jornal Semente" title="Jornal Semente" translate="no">
+                        </a>
+                    </figure>
+                    
+                    <ul class="footer__list-social-media">
+                        <li class="footer__item">
+                            <a class="footer__link" href="#" title="Acessar o Linkedin do Semente Educação">
+                                <img src="./images/twitter.png" alt="Acessar o Linkedin do Semente Educação">
+                            </a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__link" href="#" title="Acessar o Linkedin do Semente Educação">
+                                <img src="./images/linkedin.png" alt="Acessar o Linkedin do Semente Educação">
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="footer-rigths">All rigths reserved.</p>
+
+                </section>
+
+                <section class="footer__container-right">
+
+                    <ul class="footer__list-menu">
+                        <li class="footer__item">
+                            <a class="footer__link" href="#" title="Artigos">Artigos</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__link" href="#" title="Sobre o Portal">Sobre o Portal</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__link" href="#" title="Contato">Contato</a>
+                        </li>
+                    </ul>
+
+                    <p class="footer-address">Rua Zé das Coves, 171 - 3º andar</p>
+                    <p class="footer-address">São José de Pádua - XP - Brasil</p>
+
+                </section>
+
+            </nav>
+
+        </footer>
+
+        <script type="module" src="js/main.js"></script>
     </body>
 </html>
