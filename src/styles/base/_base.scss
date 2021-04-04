@@ -13,25 +13,21 @@
     max-width: $width-header-footer-max;   
     width: 100%;
     padding: 1.25rem 0;
-    
     @if $isAuto {
         margin: 0 auto;
     }
-
-    @media (max-width: $width-header-footer-max) {
+    @media (max-width: $break-point-tablet-portrait) {
         padding: 1.25rem;
     }
 }
 @mixin wrapperContent($isAuto: true) {
     max-width: $width-content-max;   
     width: 100%;
-    padding: 1.25rem 0 5rem;
-
+    padding: 1.25rem 0 3rem;
     @if $isAuto {
         margin: 0 auto;
     }
-
-    @media (max-width: $width-header-footer-max) {
+    @media (max-width: $break-point-tablet-portrait) {
         padding: 1.25rem;
     }
 }
@@ -121,20 +117,14 @@
 }
 @mixin contentTitle($isTextItalic: false, $isTextBold: false, $isMarginAtTheEnd: true) {
     font-family: 'Merriweather', sans-serif;
-    font-size: clamp(20px, 1.5rem, 1.5rem);
+    font-size: clamp(18px, 1.5rem, 1.5rem);
     line-height: clamp(26px, 2.18rem, 2.18rem);
     color: $black-third;
+    font-weight: 700;
     text-align: left;
+    padding-top: 2rem;
     @if $isMarginAtTheEnd {
-        padding-top: 2.25rem;
-        margin-bottom: 1.56rem;
-    }
-    @if $isTextItalic {
-        font-style: italic;
-    }
-
-    @if $isTextBold {
-        font-weight: 700;
+        margin-bottom: 1.5rem;
     }
 }
 @mixin contentParagraph($isTextItalic: false, $isTextBold: false, $isMarginAtTheEnd: true) {
@@ -144,13 +134,7 @@
     color: $black-third;
     text-align: left;
     @if $isMarginAtTheEnd {
-        margin-bottom: 1.56rem;
-    }
-    @if $isTextItalic {
-        font-style: italic;
-    }
-    @if $isTextBold {
-        font-weight: 700;
+        margin-bottom: 1.5rem;
     }
     &--bold {
         font-weight: 700;
@@ -158,6 +142,31 @@
     &--underline {
         text-decoration: underline;
     }
+}
+@mixin sectionRelatadArticleTitle {
+    font-family: 'Merriweather', sans-serif;
+    font-size: clamp(20px, 1.75rem, 1.75rem);
+    line-height: clamp(27px, 2.18rem, 2.18rem);
+    color: $black-third;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 2.05rem;
+}
+@mixin relatadArticleTitle {
+    font-family: 'Merriweather', sans-serif;
+    font-size: clamp(16px, 1.31rem, 1.31rem);
+    line-height: clamp(24px, 2.18rem, 2.18rem);
+    color: $black-third;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 0.8rem;
+}
+@mixin relatadArticleParagraph {
+    font-family: 'Merriweather', sans-serif;
+    font-size: clamp(14px, 1.125rem, 1.125rem);
+    line-height: clamp(22px, 2.18rem, 2.18rem);
+    color: $black-third;
+    text-align: left;
 }
 @mixin footerParagraph($isTextItalic: true, $isTextBold: false, $textAlign: left) {
     font-family: 'Poppins', sans-serif;
@@ -226,9 +235,9 @@
 // ----- MENU ----- //
 // --------------------
 @mixin menuMobile {
-    margin-top: 6.25rem;
+    margin-top: 7.5rem;
     background-color: $green-primary;
-    padding: 1rem;
+    padding: 1rem 1rem 2rem;
     text-align: center;
     border-radius: 1.2rem;
     width: calc(100% - 2rem);
@@ -284,8 +293,8 @@
 @mixin menuLink($color: $green-primary) {
     padding: 10px 5px;
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(12px, 0.875rem, 0.875rem);
-    line-height: clamp(16px, 1.25rem, 1.25rem);
+    font-size: clamp(14px, 0.875rem, 0.875rem);
+    line-height: clamp(18px, 1.25rem, 1.25rem);
     font-weight: 500;
     color: $color;
     text-transform: uppercase;
@@ -369,10 +378,15 @@
     li {
         @include contentParagraph;
         list-style: disc;
+        a {
+            word-wrap: break-word;
+            display: inline;
+        }
     }
 }
 @mixin matterTags {
     @include flex($justifyContent: flex-start, $flexWrap: wrap);
+    margin-bottom: 2rem;
     & > p {
         font-family: 'Poppins', sans-serif;
         font-size: clamp(12px, 0.87rem, 0.87rem);
@@ -382,4 +396,13 @@
         background-color: $green-third;
         margin: 0.6rem 0.6rem 0 0;
     }
+}
+
+// --------------------
+// -- RELATED ARTICLES -- //
+// --------------------
+@mixin articleImage {
+    width: 300px;
+    height: 250px;
+    margin-bottom: 1.25rem;
 }

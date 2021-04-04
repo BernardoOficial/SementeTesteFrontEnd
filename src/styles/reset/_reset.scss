@@ -9,8 +9,9 @@
 html {
     font-size: 16px;
     line-height: 1.4rem;
-
     @media (max-width: $break-point-desktop) {
+        font-size: 16px;
+        line-height: 1.4rem;
     }
     @media (max-width: $break-point-tablet-portrait) {
         font-size: 14px;
