@@ -1,0 +1,68 @@
+.#{$main} {
+    @include container;
+    .#{$main}__wrapper {
+        @include wrapperContent;
+        .#{$main}__subject-title {
+            @include subjectTitle;
+        }
+        .#{$main}__autor {
+            @include grid(
+                $width: 100%,
+                $gridTemplateColumn: auto 1fr auto,
+                $gridTemplateRows: auto auto,
+                $justifyItems: start,
+                $row-gap: 0px,
+                $column-gap: 5px
+            );
+            .#{$main}__autor-photo {
+                @include authorPhoto;
+                grid-row: 1 / 3;
+            }
+            .#{$main}__autor-name {
+                @include authorName;
+            }
+            .#{$main}__info-read {
+                @include infoRead;
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+            }
+            .#{$main}__redes-sociais {
+                @include flex;
+                grid-row: 1 / 3;
+                .#{$main}__image-rede {
+                    @include socialNetworksAuthor;
+                }
+            }
+        }
+        .#{$main}__matter-featured {
+            @include featured;
+            .#{$main}__matter-title-featured {
+                @include featureTitle;
+            }
+            .#{$main}__matter-text-featured {
+                @include featureText;
+            }
+        }
+        .#{$main}__matter-title {
+            @include contentTitle;
+        }
+        .#{$main}__matter-text {
+            @include contentParagraph;
+        }
+        .#{$main}__matter-figure {
+            @include figure;
+            .#{$main}__matter-image {
+                @include figureImage;
+            }
+            .#{$main}__matter-caption {
+                @include figureCaption;
+            }
+        }
+        .#{$main}__matter-list {
+            @include matterList;
+        }
+        .#{$main}__matter-tags {
+            @include matterTags;
+        }
+    }
+}

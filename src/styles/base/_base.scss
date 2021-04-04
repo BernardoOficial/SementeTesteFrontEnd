@@ -1,39 +1,4 @@
 // ---------------------
-// ----- RESETS ----- //
-// ---------------------
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html {
-    font-size: 16px;
-    line-height: 1.4rem;
-}
-a {
-    display: inline-block;
-    text-decoration: none;
-    color: inherit;
-}
-input, select, textarea, button {
-    font-size: 16px;
-    line-height: 1.4rem;
-    font-family: 'Poppins', sans-serif;
-    border: none;
-    outline: none;
-    background-color: transparent;
-}
-ul, li {
-    list-style: none;
-}
-body {
-    background-color: $white-primary;
-    font-family: 'Merriweather', sans-serif;
-    text-rendering: optimizelegibility;
-    -webkit-font-smoothing: antialiased;
-}
-
-// ---------------------
 // ----- LAYOUT ----- //
 // ---------------------
 @mixin container($bg-color: false) {
@@ -60,7 +25,7 @@ body {
 @mixin wrapperContent($isAuto: true) {
     max-width: $width-content-max;   
     width: 100%;
-    padding: 1.25rem 0;
+    padding: 1.25rem 0 5rem;
 
     @if $isAuto {
         margin: 0 auto;
@@ -70,11 +35,12 @@ body {
         padding: 1.25rem;
     }
 }
-@mixin flex($justifyContent: center, $alignItems: center, $flexDirection: row) {
+@mixin flex($justifyContent: center, $alignItems: center, $flexDirection: row, $flexWrap: nowrap) {
     display: flex;
     flex-direction: $flexDirection;
     justify-content: $justifyContent;
     align-items: $alignItems;
+    flex-wrap: $flexWrap;
 }
 
 @mixin grid(
@@ -123,38 +89,6 @@ body {
 // -------------------------
 // ----- TIPOGRAFIA ----- //
 // -------------------------
-@mixin contentTitle($isTextItalic: false, $isTextBold: false) {
-    font-family: 'Merriweather', sans-serif;
-    font-size: 1.5rem;
-    line-height: 2.18rem;
-    color: $black-third;
-    text-align: left;
-    margin: 2rem 0;
-
-    @if $isTextItalic {
-        font-style: italic;
-    }
-
-    @if $isTextBold {
-        font-weight: 700;
-    }
-}
-@mixin contentParagraph($isTextItalic: false, $isTextBold: false) {
-    font-family: 'Merriweather', sans-serif;
-    font-size: 1.125rem;
-    line-height: 2.18rem;
-    color: $black-third;
-    text-align: left;
-    margin: 1rem 0;
-
-    @if $isTextItalic {
-        font-style: italic;
-    }
-
-    @if $isTextBold {
-        font-weight: 700;
-    }
-}
 @mixin subjectTitle {
     font-family: 'Merriweather', sans-serif;
     font-size: 3rem;
@@ -162,12 +96,73 @@ body {
     font-weight: 700;
     text-align: left;
     color: $black-primary;
-    margin: 2.5rem 0;
+    margin: 1.5rem 0 2.375rem;
+    @media (max-width: $break-point-tablet-portrait) {
+        font-size: clamp(24px, 2rem, 2rem);
+        line-height: 2.5rem;
+    }
+}
+@mixin featureTitle {
+    font-family: 'Merriweather', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2.18rem;
+    text-align: left;
+    font-style: italic;
+    color: $black-third;
+    margin-bottom: 1rem;
+}
+@mixin featureText {
+    font-family: 'Merriweather', sans-serif;
+    font-size: clamp(16px, 1.125rem, 1.125rem);
+    line-height: clamp(32px, 2.18rem, 2.18rem);
+    text-align: left;
+    font-style: italic;
+    color: $black-third;
+}
+@mixin contentTitle($isTextItalic: false, $isTextBold: false, $isMarginAtTheEnd: true) {
+    font-family: 'Merriweather', sans-serif;
+    font-size: clamp(20px, 1.5rem, 1.5rem);
+    line-height: clamp(26px, 2.18rem, 2.18rem);
+    color: $black-third;
+    text-align: left;
+    @if $isMarginAtTheEnd {
+        padding-top: 2.25rem;
+        margin-bottom: 1.56rem;
+    }
+    @if $isTextItalic {
+        font-style: italic;
+    }
+
+    @if $isTextBold {
+        font-weight: 700;
+    }
+}
+@mixin contentParagraph($isTextItalic: false, $isTextBold: false, $isMarginAtTheEnd: true) {
+    font-family: 'Merriweather', sans-serif;
+    font-size: clamp(16px, 1.125rem, 1.125rem);
+    line-height: clamp(32px, 2.18rem, 2.18rem);
+    color: $black-third;
+    text-align: left;
+    @if $isMarginAtTheEnd {
+        margin-bottom: 1.56rem;
+    }
+    @if $isTextItalic {
+        font-style: italic;
+    }
+    @if $isTextBold {
+        font-weight: 700;
+    }
+    &--bold {
+        font-weight: 700;
+    }
+    &--underline {
+        text-decoration: underline;
+    }
 }
 @mixin footerParagraph($isTextItalic: true, $isTextBold: false, $textAlign: left) {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    font-size: clamp(12px, 0.875rem, 0.875rem);
+    line-height: clamp(16px, 1.25rem, 1.25rem);
     color: $black-secondary;
     text-align: $textAlign;
     @if $isTextItalic {
@@ -289,8 +284,8 @@ body {
 @mixin menuLink($color: $green-primary) {
     padding: 10px 5px;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
+    font-size: clamp(12px, 0.875rem, 0.875rem);
+    line-height: clamp(16px, 1.25rem, 1.25rem);
     font-weight: 500;
     color: $color;
     text-transform: uppercase;
@@ -322,10 +317,16 @@ body {
 }
 @mixin authorName {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.875rem;
-    line-height: 1.3rem;
+    font-size: clamp(14px, 0.875rem, 0.875rem);
+    line-height: clamp(1.3rem, 1.3rem, 1.3rem);
     color: $black-third;
-    margin-bottom: 5px;
+    font-weight: 700;
+}
+@mixin infoRead {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(12px, 0.75rem, 0.75rem);
+    line-height: clamp(16px, 1.2rem, 1rem);
+    color: $black-third;
 }
 @mixin socialNetworksAuthor {
     width: 30px;
@@ -337,4 +338,48 @@ body {
     @include authorName;    
     @include authorPhoto;
     @include socialNetworksAuthor;
+}
+
+// --------------------
+// ----- MATTER ----- //
+// --------------------
+@mixin featured {
+    padding: 0.8rem 0.8rem 0.8rem 1.5rem;
+    margin: 3.75rem 0;
+    border-left: 4px solid $black-third;
+}
+@mixin figure {
+    margin-bottom: 1.56rem;
+}
+@mixin figureImage {
+    display: block;
+    width: 100%;
+}
+@mixin figureCaption {
+    font-family: 'Merriweather', sans-serif;
+    font-size: clamp(12px, 0.81rem, 0.81rem);
+    line-height: clamp(20px, 1.56rem, 1.56rem);
+    color: $black-third;
+    text-align: center;
+    font-style: italic;
+    margin-top: 1rem;
+}
+@mixin matterList {
+    padding-left: 1.3rem;
+    li {
+        @include contentParagraph;
+        list-style: disc;
+    }
+}
+@mixin matterTags {
+    @include flex($justifyContent: flex-start, $flexWrap: wrap);
+    & > p {
+        font-family: 'Poppins', sans-serif;
+        font-size: clamp(12px, 0.87rem, 0.87rem);
+        line-height: clamp(26px, 2.18rem, 2.18rem);
+        color: $black-third;
+        padding: 0 0.4rem;
+        background-color: $green-third;
+        margin: 0.6rem 0.6rem 0 0;
+    }
 }
