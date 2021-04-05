@@ -319,7 +319,8 @@
         background-color: $color;
         transition: 0.4s ease-out;
     }
-    &:hover::before {
+    &:hover::before,
+    &.active::before {
         width: calc(100% - 10px);
     }
 }
