@@ -1,5 +1,5 @@
 .#{$header} {
-    border-bottom: 1px solid $green-primary;
+    border-bottom: 1px solid var(--green-primary);
     @include container;
     .#{$header}__wrapper {
         @include wrapper;
@@ -28,13 +28,16 @@
                 @include flex($flexDirection: column);
                 @include menuMobile;
                 .#{$header}__item {
-                    @include menuItem($margin-itens: 0, $color: $white-primary, $isDecoration: false);
+                    @include menuItem($margin-itens: 0, $color: var(--white-primary), $isDecoration: false);
                     .#{$header}__link {
-                        @include menuLink($color: $white-primary);
+                        @include menuLink($color: var(--white-primary));
                         padding: 15px 5px;
                     }
                 }
             }
         }
+    }
+    .#{$header}__btn-theme {
+        @include buttonTheme;
     }
 }

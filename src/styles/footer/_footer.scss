@@ -1,5 +1,5 @@
 .#{$footer} {
-    @include container($bg-color: $green-secondary);
+    @include container($bg-color: var(--green-secondary));
     .#{$footer}__wrapper {
         @include wrapper;
         @include flex($justifyContent: space-between);
@@ -58,9 +58,9 @@
             .#{$footer}__list-menu {
                 @include flex($justifyContent: space-between);
                 .#{$footer}__item {
-                    @include menuItem($margin-itens: 5px, $color: $black-secondary);
+                    @include menuItem($margin-itens: 5px, $color: var(--black-secondary));
                     .#{$footer}__link {
-                        @include menuLink($color: $black-secondary);
+                        @include menuLink($color: var(--black-secondary));
                     }
                 }
             }

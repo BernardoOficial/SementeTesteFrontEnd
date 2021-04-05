@@ -1,4 +1,4 @@
-// Javascript aqui
+// MENU MOBILE
 const iconMenu = document.querySelector("[data-icon]");
 const overlay = document.querySelector("[data-overlay]");
 const menuMobile = document.querySelector("[data-menu-mobile]");
@@ -20,3 +20,73 @@ menuMobile.addEventListener('click', evento => evento.stopPropagation());
 
 iconMenu.addEventListener('click', toggleIcon);
 overlay.addEventListener('click', hideOverlay);
+
+/////////////////////////////////////////////
+
+// MARCA TEXTO ANIMADO
+const elementsMarcaTexto = Array.from(
+  document.querySelectorAll(".main__matter-text--highlighter")
+);
+
+window.addEventListener("scroll", evento => {
+  const windowHeight = window.innerHeight;
+
+  const estaAparecendoEmTela = (distanciaDoTopo) =>
+    distanciaDoTopo < windowHeight;
+
+  elementsMarcaTexto.forEach(element => {
+    const distanciaDoTopo = element.getBoundingClientRect().top;
+
+    estaAparecendoEmTela(distanciaDoTopo)
+      ? element.classList.add("main__matter-text--highlighter-ativo")
+      : element;
+  });
+});
+
+//////////////////////////////////////////////
+
+// LAZYLOAD 
+window.onload = verificarScroll;
+
+function verificarScroll() {
+  window.addEventListener("scroll", aparecerImages);
+}
+
+function aparecerImages() {
+  const containersElements = document.querySelectorAll(".main__show-me");
+
+  containersElements.forEach((element) => {
+    if (element.getBoundingClientRect().top < window.innerHeight - 300) {
+        element.classList.add("main__show-me--ativo");
+
+    } 
+    else if (element.getBoundingClientRect().top > window.innerHeight - 150) {
+        element.classList.remove("main__show-me--ativo");
+    }
+  });
+}
+
+//////////////////////////////////////////////
+
+// SWITCH THEME
+const HTML = document.querySelector('html');
+const btnTheme = document.querySelector('[data-btn-theme]');
+const iconBtnTheme = btnTheme.firstElementChild;
+
+const classNamesIcons = {
+  sun: "fas fa-sun",
+  moon: "fas fa-moon"
+};
+
+const getCurrentTheme = () => HTML.getAttribute('data-theme');
+
+const switchTheme = () => {
+    const currentTheme = getCurrentTheme();
+    currentTheme === "light"
+      ? (HTML.setAttribute("data-theme", "dark"),
+        (iconBtnTheme.classList.value = classNamesIcons.sun))
+      : (HTML.setAttribute("data-theme", "light"),
+      (iconBtnTheme.classList.value = classNamesIcons.moon)); 
+}
+
+btnTheme.addEventListener('click', switchTheme);

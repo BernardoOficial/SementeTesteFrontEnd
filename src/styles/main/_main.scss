@@ -1,5 +1,20 @@
 .#{$main} {
     @include container;
+    .#{$main}__show-me {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-15px);
+        &--ativo {
+            animation: show-me 1s ease-out forwards;
+            @keyframes show-me {
+                to {
+                    transform: translateY(0);
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
     .#{$main}__wrapper-content {
         @include wrapperContent;
         .#{$main}__subject-title {
@@ -67,7 +82,7 @@
     }
     .#{$main}__wrapper-related-articles {
         @include wrapper;
-        border-top: 1px solid $green-primary;
+        border-top: 1px solid var(--green-primary);
         padding: 2rem 0 5rem;
         @media (max-width: $break-point-tablet-portrait) {
             padding: 2rem 1.25rem 5rem;
