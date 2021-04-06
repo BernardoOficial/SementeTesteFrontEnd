@@ -338,6 +338,12 @@
     background-color: var(--green-primary);
     border-radius: 50%;
     z-index: 20;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+
+    &:hover {
+        filter: brightness(80%);
+    }
 }
 
 // --------------------
