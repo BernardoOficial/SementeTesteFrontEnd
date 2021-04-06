@@ -45,6 +45,10 @@
                     width: 30px;
                     height: 30px;
                     margin: 0 0.5rem;
+                    transition: 0.3s ease-out;
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
                 }
             }
             .#{$footer}-rigths {

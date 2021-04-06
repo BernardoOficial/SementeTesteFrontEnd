@@ -431,7 +431,12 @@ body {
           width: 30px;
           height: 30px;
           border-radius: 50%;
-          margin-right: 16px; }
+          margin-right: 16px;
+          -webkit-transition: 0.3s ease-out;
+          transition: 0.3s ease-out; }
+          .main .main__wrapper-content .main__autor .main__redes-sociais .main__image-rede:hover {
+            -webkit-transform: translateY(-5px);
+                    transform: translateY(-5px); }
     .main .main__wrapper-content .main__matter-featured {
       padding: 0.8rem 0.8rem 0.8rem 1.5rem;
       margin: 3.75rem 0;
@@ -629,7 +634,8 @@ body {
       .main .main__wrapper-related-articles .main__related-articles .main__article-image {
         width: 300px;
         height: 250px;
-        margin-bottom: 1.25rem; }
+        margin-bottom: 1.25rem;
+        position: relative; }
       .main .main__wrapper-related-articles .main__related-articles .main__article-title {
         font-family: 'Merriweather', sans-serif;
         font-size: clamp(16px, 1.31rem, 1.31rem);
@@ -762,7 +768,12 @@ body {
         .footer .footer__wrapper .footer__container-left .footer__list-social-media .footer__item {
           width: 30px;
           height: 30px;
-          margin: 0 0.5rem; }
+          margin: 0 0.5rem;
+          -webkit-transition: 0.3s ease-out;
+          transition: 0.3s ease-out; }
+          .footer .footer__wrapper .footer__container-left .footer__list-social-media .footer__item:hover {
+            -webkit-transform: translateY(-5px);
+                    transform: translateY(-5px); }
       .footer .footer__wrapper .footer__container-left .footer-rigths {
         font-family: 'Poppins', sans-serif;
         font-size: clamp(12px, 0.875rem, 0.875rem);
